@@ -1,35 +1,79 @@
-Heart-Disease-Prediction Web Application
-A Web Application to predict Heart-Disease using SVM (Deployed on Heroku)
-1.Project Requirements or Dependencies
-Anaconda Python (to get ML Libraries)
-Pip install flask (For Front-end)
-2. Load Dataset
-Heart-Disease-Prediction Original Data Set
+# Heart Disease Prediction Using Machine Learning
 
-Attribute Information:
+A machine learning project that predicts the likelihood of heart disease using patient health information. The project uses the Random Forest classification algorithm and evaluates its performance using accuracy, a classification report, and a confusion matrix.
 
-Sample code number: ID number
-Clump Thickness:1-10
-Uniformity of Cell size:1-10
-Uniformity of Cell shape:1-10
-Marginal Adhesion:1-10
-Single Epithelial Cell Size:1-10
-Bare Nuclei:1-10
-Bland Chromatin:1-10
-Normal Nucleoli:1-10
-Mitoses:1-10
-Class: (2 for Benign, 4 for Malignant)
-3.Build and Train the model using SVM
-Using SVM (Support Vector Machines) we build and train a model using human cell records, and classify cells to predict whether the samples are Effected or Not-Affected.
+## Technologies Used
 
-4.Flask Creation
-Heart-Disease-Prediction.ipynb — This contains code for the machine learning model to predict heart disease based on the class.
-app.py — This contains Flask APIs that receives cells details through GUI or API calls, computes the predicted value based on our model and returns it
-templates & static — This folders contains the HTML template and CSS styling to allow user to enter cells details and displays the predicted output.
-5.Backend creation using model.pkl file
-Use this pretrained model and connect it with our Flask application. Use this for prediction for model and to show the output
+* Python
+* Scikit-learn
+* Pandas
+* NumPy
+* Matplotlib
+* Jupyter Notebook
+* Flask
 
-6. Adding form to flask app
-7.Integrating web application with machine learning backend.
-8. Deployment on Heroku
-https://heartdeseaseprediction.herokuapp.com/
+## Machine Learning Algorithm
+
+The project uses a **Random Forest Classifier** with 200 decision trees.
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+
+rf_model = RandomForestClassifier(n_estimators=200)
+rf_model.fit(X_train, y_train)
+```
+
+## Project Workflow
+
+1. Load the heart disease dataset.
+2. Inspect and clean the data.
+3. Select the input features and target variable.
+4. Split the dataset into training and testing sets.
+5. Train the Random Forest classifier.
+6. Predict results on the test dataset.
+7. Evaluate the model using accuracy, classification report, and confusion matrix.
+
+## Results
+
+* Achieved approximately **89% accuracy** on the test dataset.
+* Evaluated performance using precision, recall, F1-score, and confusion matrix.
+
+## Repository Files
+
+* `heart_disease_prediction.ipynb` – Data preprocessing, model training, prediction, and evaluation
+* `heart.xls` – Dataset used for the project
+* `app.py` – Flask web application
+* `requirements.txt` – Required Python libraries
+* `Procfile` – Deployment configuration
+
+## How to Run
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/nayanabhargav/heart-disease-prediction-project.git
+```
+
+2. Open the project folder:
+
+```bash
+cd heart-disease-prediction-project
+```
+
+3. Install the required libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Open the notebook:
+
+```bash
+jupyter notebook heart_disease_prediction.ipynb
+```
+
+## Author
+
+**Nayana B**
+
+MCA Candidate | Aspiring Data Analyst and AI/ML Engineer
